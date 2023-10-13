@@ -1,0 +1,27 @@
+
+:root{
+    --background-gradient: linear-gradient(260deg, #5F41D9 2.25%, #41B5D9 100.27%);
+    --teal-purple-gradient: linear-gradient( 60deg,#16d4d9 -10%,#5f41d9 70% );
+    --brand-colors-purple-pure: #5F41D9;
+    --primary-font: 'Inter', sans-serif;
+    --brand-color: 153, 243, 245;
+    --neutral-colors-200: #423D51;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+html{
+  font-size: 62.5%;
+  font-family: var(--primary-font);
+}
+
+a{
+  text-decoration: none;
+}     
+

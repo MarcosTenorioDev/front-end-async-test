@@ -1,9 +1,15 @@
-
+import { Navbar } from "../components";
+import { HeroSectionBg, ContentSection } from "../styles/Section.styled";
 
 const Home = () => {
   return (
     <>
-      <h1>Hello World</h1>
+      <Navbar />
+      <HeroSectionBg>
+        <ContentSection>
+          <h1>Hello World</h1>
+        </ContentSection>
+      </HeroSectionBg>
     </>
   );
 };
