@@ -3,13 +3,14 @@ import styled from "styled-components";
 
 const NavBg = styled.div`
   background: rgba(0, 0, 0, 0.03);
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(10px);
   width: 100vw;
   position: fixed;
   top: 0;
   display: flex;
   justify-content: center;
   padding: 20px 0px;
+  z-index: 2;
 
   @media (max-width: 1220px) {
     background: none;
