@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const HeroSectionBg = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   max-height: 700px;
   background: linear-gradient(260deg, #41b5d9 2.25%, #5f41d9 100.27%);

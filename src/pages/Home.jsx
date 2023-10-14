@@ -10,6 +10,17 @@ import {
   ImgBtn,
   Slogan,
 } from "../styles/Section.styled";
+import {
+  MainContent,
+  AboutContent,
+  MainContentSub,
+  CardsContainer,
+  MainContentTitle,
+  MoreResources,
+  SeeAllResourcesDiv,
+  SeeMoreBtn,
+  SeeAllResourcesText,
+} from "../styles/Content.styled";
 import { Img } from "../styles/Svg.style";
 import devices from "../assets/devices.svg";
 import { Flex } from "../styles/Flex.style";
@@ -18,8 +29,29 @@ import play from "../assets/play.svg";
 import playlist from "../assets/playlist.svg";
 import certified from "../assets/certified.svg";
 import man from "../assets/man.png";
+import Card from "../components/Card";
 
 const Home = () => {
+  const cards = [
+    {
+      img: devices,
+      title: "trilha de etapas",
+      description:
+        "Crie planos de estudos especificando aulas e/ou cursos e definindo a ordem que seus alunos devem estudar.",
+    },
+    {
+      img: devices,
+      title: "trilha de etapas",
+      description:
+        "Crie planos de estudos especificando aulas e/ou cursos e definindo a ordem que seus alunos devem estudar.",
+    },
+    {
+      img: devices,
+      title: "trilha de etapas",
+      description:
+        "Crie planos de estudos especificando aulas e/ou cursos e definindo a ordem que seus alunos devem estudar.",
+    },
+  ];
   return (
     <>
       <Navbar />
@@ -98,7 +130,34 @@ const Home = () => {
         </ContentSection>
       </HeroSectionBg>
 
-      <ContentSection></ContentSection>
+      <MainContent>
+        <AboutContent>
+          <MainContentSub>pensamos em cada detalhe</MainContentSub>
+          <MoreResources>Conheça alguns dos nossos recursos ⚡️</MoreResources>
+        </AboutContent>
+
+        <MainContentTitle>
+          Queremos que o aluno se sinta confortável enquanto aprende
+        </MainContentTitle>
+
+        <CardsContainer>
+          {cards.map((card, index) => (
+            <Card
+              key={index}
+              img={card.img}
+              title={card.title}
+              description={card.description}
+            />
+          ))}
+        </CardsContainer>
+
+        <SeeAllResourcesDiv>
+          <SeeAllResourcesText>
+            Veja todos os outros recursos disponíveis para te ajudar
+          </SeeAllResourcesText>
+          <SeeMoreBtn>Ver mais</SeeMoreBtn>
+        </SeeAllResourcesDiv>
+      </MainContent>
     </>
   );
 };

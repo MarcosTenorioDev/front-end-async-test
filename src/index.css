@@ -3,9 +3,11 @@
     --background-gradient: linear-gradient(260deg, #5F41D9 2.25%, #41B5D9 100.27%);
     --teal-purple-gradient: linear-gradient( 60deg,#16d4d9 -10%,#5f41d9 70% );
     --brand-colors-purple-pure: #5F41D9;
-    --primary-font: 'Inter', sans-serif;
     --brand-color: 153, 243, 245;
     --neutral-colors-200: #423D51;
+    --neutral-colors-100: #130C25;
+    --neutral-colors-900: #E7E7E9;
+    --brand-colors-purple-dark: #432E98;
 
 }
 
