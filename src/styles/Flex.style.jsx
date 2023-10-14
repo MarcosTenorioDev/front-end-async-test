@@ -13,4 +13,10 @@ export const Flex = styled.div`
     gap: ${(prop) => prop.gap ? prop.gap : "0"};
     max-width: ${(prop) => prop.maxw ? prop.maxw : "none"} ;
     border: ${(prop) => prop.border ? prop.border : "none"};
+
+    @media (max-width:980px) {
+        text-align: center;
+        align-items: center;
+        gap: 20px;
+    }
 `

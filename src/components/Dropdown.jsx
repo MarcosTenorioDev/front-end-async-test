@@ -42,6 +42,7 @@ const Dropdown = (props) => {
                 selected={props.check ? selectedOption === option.name : ""}
                 key={index}
                 onClick={() => selectOption(option.name)}
+                paddingitem={props.paddingitem}
               >
                 <DropdownImage
                   src={option.img}

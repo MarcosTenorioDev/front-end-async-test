@@ -24,7 +24,7 @@ const DropdownButton = styled.button`
 const DropdownTitle = styled.h3`
     font-size: 1.5rem;
     font-weight: 600;
-    letter-spacing: 0.1rem;
+    letter-spacing: 2.1px;
     color: var(--brand-colors-purple-pure);
     white-space: nowrap;
     padding: ${(prop) => prop.padding ? prop.padding : "0"};
@@ -45,7 +45,7 @@ const DropdownItemContainer = styled.div`
     display: ${(prop) => prop.display ? prop.display : "block"};;
     grid-template-columns: repeat(2, 1fr);
 
-    @media (max-width: 768px) {
+    @media (max-width: 650px) {
     grid-template-columns: repeat(1, 1fr);
   }
     
@@ -62,7 +62,7 @@ const DropdownItem = styled.li`
   align-items: center;
   padding: 10px;
   cursor: pointer;
-  padding: 15px;
+  padding: ${(prop) => prop.paddingitem ? prop.paddingitem : "15px" };
   background: ${(props) =>
     props.selected
       ? "linear-gradient(90deg, #5F41D9 -880.48%, rgba(95, 65, 217, 0.00) 100%)"

@@ -87,8 +87,13 @@ const NavLinkWrapper = styled.nav`
         display: flex;
       `}
   }
+  @media (max-width: 670px) {
+    margin-bottom:200px;
+    height: 100vh;
+  }
   @media (max-width: 440px) {
-    overflow-y: auto;
+    width: 95%;
+    
   }
 `;
 
@@ -137,7 +142,7 @@ const LogoImg = styled.img`
 
   @media (max-width: 1220px) {
     position: absolute;
-    left: 25px;
+    left: 34px;
     top: 34px;
     z-index: 1;
   }

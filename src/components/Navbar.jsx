@@ -47,9 +47,9 @@ const Navbar = () => {
 
   const solutions = [
     { name: "Crie uma Escola Online", description: "Lorem ipsum dolor sit amet", img: ead },
+    { name: "Comunidade e rede social", description: "Lorem ipsum dolor sit amet", img: social  },
     { name: "Gamificação", description: "Lorem ipsum dolor sit amet", img: gamification },
-    { name: "Comunidade e rede social", description: "Lorem ipsum dolor sit amet", img: mobile },
-    { name: "Aplicativo mobile", description: "Lorem ipsum dolor sit amet", img: social },
+    { name: "Aplicativo mobile", description: "Lorem ipsum dolor sit amet", img: mobile },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -68,9 +68,10 @@ const Navbar = () => {
             <NavLinkWrapper >
               <Dropdown
                 options={solutions}
-                title="Soluções principais"
-                padding="20px 15px"
-                widthimg="50px"
+                title="SOLUÇÕES PRINCIPAIS"
+                padding="30px 30px"
+                paddingitem="0px 25px 40px"
+                widthimg="35px"
                 name="Soluções"
                 check={false}
                 display="grid"
