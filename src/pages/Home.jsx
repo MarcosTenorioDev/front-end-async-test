@@ -30,26 +30,29 @@ import playlist from "../assets/playlist.svg";
 import certified from "../assets/certified.svg";
 import man from "../assets/man.png";
 import Card from "../components/Card";
+import track from "../assets/track.svg"
+import playlistCard from "../assets/playlists.svg"
+import folder from "../assets/folder.svg"
 
 const Home = () => {
   const cards = [
     {
-      img: devices,
-      title: "trilha de etapas",
+      img: track,
+      title: "Trilha de etapas",
       description:
         "Crie planos de estudos especificando aulas e/ou cursos e definindo a ordem que seus alunos devem estudar.",
     },
     {
-      img: devices,
-      title: "trilha de etapas",
+      img: playlistCard,
+      title: "Playlists",
       description:
-        "Crie planos de estudos especificando aulas e/ou cursos e definindo a ordem que seus alunos devem estudar.",
+        "Transforme uma coleção em uma playlist para poder ver vídeos e áudios em sequência offline.",
     },
     {
-      img: devices,
-      title: "trilha de etapas",
+      img: folder,
+      title: "Coleções",
       description:
-        "Crie planos de estudos especificando aulas e/ou cursos e definindo a ordem que seus alunos devem estudar.",
+        "Crie coleções, adicione conteúdos, reorganize ítens e deixe tudo do seu jeito para melhorar a experiência.",
     },
   ];
   return (
