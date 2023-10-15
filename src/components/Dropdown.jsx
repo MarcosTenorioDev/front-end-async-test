@@ -12,6 +12,7 @@ import {
   DropdownItemDescription,
 } from "../styles/Dropdown.styled";
 import check from "../assets/check.svg";
+import ArrowDropdown from "./ArrowDropdown";
 
 const Dropdown = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,6 +31,7 @@ const Dropdown = (props) => {
     <DropdownWrapper>
       <DropdownButton onClick={toggleDropdown}>
         {props.name ? props.name : selectedOption}
+        <ArrowDropdown isOpen={isOpen}/>
       </DropdownButton>
       {isOpen && (
         <DropdownMenu position={props.position}>

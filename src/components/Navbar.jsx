@@ -11,7 +11,6 @@ import {
   StyledNavButton
 } from "../styles/Navbar.styled";
 import Dropdown from "./Dropdown";
-import { Button } from "../styles/Button.style";
 import logoSvg from "../assets/logo.svg";
 import Hamburguer from "hamburger-react";
 import userIcon from "../assets/userProfile.svg";

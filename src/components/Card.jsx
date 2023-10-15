@@ -3,7 +3,7 @@ import {
   CardDescription,
   CardImg,
   CardTitle,
-} from "../styles/Card.style";
+} from "../styles/Card.styled";
 
 const Card = (props) => {
   return (

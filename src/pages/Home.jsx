@@ -21,10 +21,10 @@ import {
   SeeMoreBtn,
   SeeAllResourcesText,
 } from "../styles/Content.styled";
-import { Img } from "../styles/Svg.style";
+import { Img } from "../styles/Svg.styled";
 import devices from "../assets/devices.svg";
-import { Flex } from "../styles/Flex.style";
-import { Button } from "../styles/Button.style";
+import { Flex } from "../styles/Flex.styled";
+import { Button } from "../styles/Button.styled";
 import play from "../assets/play.svg";
 import playlist from "../assets/playlist.svg";
 import certified from "../assets/certified.svg";

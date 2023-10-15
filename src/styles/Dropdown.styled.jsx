@@ -16,6 +16,7 @@ const DropdownButton = styled.button`
   font-size: 1.5rem;
   font-weight: 400;
   transition: transform 0.2s;
+  gap: 10px;
 
   @media (max-width: 1290px) {
     padding: 20px 0px;
