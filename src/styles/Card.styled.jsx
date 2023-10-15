@@ -7,7 +7,7 @@ const StyledCard = styled.div`
   max-width: 350px;
   padding: 0px 20px;
   border-radius: 15px;
-  align-items: center;
+  align-items: flex-start;
   
   @media (max-width: 1220px) {
     padding: 0px 40px 0px 0px;
@@ -16,6 +16,7 @@ const StyledCard = styled.div`
     max-width: 500px;
     padding: 0;
     text-align: center;
+    align-items: center;
   }
 `;
 const CardImg = styled.img`

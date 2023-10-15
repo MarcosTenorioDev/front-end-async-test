@@ -120,6 +120,9 @@ const StyledNavLink = styled(NavLink)`
       padding-right: 0;
       margin-right: 0;
     }
+    &:nth-child(1) {
+      border: none;
+    }
     border-top: 1px solid rgb(90, 147, 224);
     padding: 20px 0;
   }
