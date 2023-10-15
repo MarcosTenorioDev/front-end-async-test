@@ -4,8 +4,8 @@ import styled from "styled-components";
 const NavBg = styled.div`
   background: rgba(0, 0, 0, 0.03);
   backdrop-filter: blur(10px);
-  width: 100vw;
-  position: fixed;
+  width: 100%;
+  position: absolute;
   top: 0;
   display: flex;
   justify-content: center;
