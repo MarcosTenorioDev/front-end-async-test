@@ -153,10 +153,15 @@ const SeeMoreBtn = styled.button`
   align-items: center;
   gap: 32px;
   cursor: pointer;
+  transition: 0.2s;
 
   &::after {
     content: url(${arrowRight});
     width: 24px;
+  }
+
+  &:hover{
+    transform: translateX(4px);
   }
 `;
 

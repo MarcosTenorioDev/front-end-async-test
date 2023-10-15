@@ -8,6 +8,7 @@ import {
   StyledHamburguerIcon,
   NavBarContent,
   NavButtonWrapper,
+  StyledNavButton
 } from "../styles/Navbar.styled";
 import Dropdown from "./Dropdown";
 import { Button } from "../styles/Button.style";
@@ -30,7 +31,11 @@ const Navbar = () => {
       href: "/",
     },
     {
-      page: "Carreiras",
+      page: "Academy",
+      href: "/",
+    },
+    {
+      page: "Blog",
       href: "/",
     },
     {
@@ -46,16 +51,32 @@ const Navbar = () => {
   ];
 
   const solutions = [
-    { name: "Crie uma Escola Online", description: "Lorem ipsum dolor sit amet", img: ead },
-    { name: "Comunidade e rede social", description: "Lorem ipsum dolor sit amet", img: social  },
-    { name: "Gamificação", description: "Lorem ipsum dolor sit amet", img: gamification },
-    { name: "Aplicativo mobile", description: "Lorem ipsum dolor sit amet", img: mobile },
+    {
+      name: "Crie uma Escola Online",
+      description: "Lorem ipsum dolor sit amet",
+      img: ead,
+    },
+    {
+      name: "Comunidade e rede social",
+      description: "Lorem ipsum dolor sit amet",
+      img: social,
+    },
+    {
+      name: "Gamificação",
+      description: "Lorem ipsum dolor sit amet",
+      img: gamification,
+    },
+    {
+      name: "Aplicativo mobile",
+      description: "Lorem ipsum dolor sit amet",
+      img: mobile,
+    },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
+
   const toggleMobileMenu = () => {
-    console.log(isMobileMenuOpen)
+    console.log(isMobileMenuOpen);
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
@@ -65,7 +86,7 @@ const Navbar = () => {
         <NavBarContent>
           <LogoImg src={logoSvg} alt="Logo" />
           <NavbarWrapper open={isMobileMenuOpen}>
-            <NavLinkWrapper >
+            <NavLinkWrapper>
               <Dropdown
                 options={solutions}
                 title="SOLUÇÕES PRINCIPAIS"
@@ -85,21 +106,13 @@ const Navbar = () => {
             </NavLinkWrapper>
 
             <NavButtonWrapper>
-              <Button>
+              <StyledNavLink>
                 <StyledUserIcon src={userIcon} alt="User Icon" />
                 Entrar
-              </Button>
+              </StyledNavLink>
+              <StyledNavButton>Começar agora</StyledNavButton>
 
-              <Button
-                border="1px solid rgba(255, 255, 255, 0.5)"
-                padding="12px 24px"
-                borderradius="80px"
-                margin="0px 40px"
-                whitespace="nowrap"
-              >
-                Começar agora
-              </Button>
-              <Dropdown options={optionsLanguage} text="PT" check={true}/>
+              <Dropdown options={optionsLanguage} text="PT" check={true} />
             </NavButtonWrapper>
           </NavbarWrapper>
 

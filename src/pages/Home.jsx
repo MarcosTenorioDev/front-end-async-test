@@ -105,17 +105,8 @@ const Home = () => {
                 EAD completo.
               </Subtitle>
               <Flex gap="30px" items="center">
-                <Button
-                  backgroundcolor="#00E1E7"
-                  borderradius="80px"
-                  padding="15px"
-                  color="black"
-                  fontsize="1.6rem"
-                  fontweight="200"
-                >
-                  Começar Agora
-                </Button>
-                <Button fontsize="1.6rem">
+                <Button>Começar Agora</Button>
+                <Button>
                   <ImgBtn>
                     <img src={play} alt="play icon" />
                   </ImgBtn>
@@ -124,7 +115,7 @@ const Home = () => {
               </Flex>
             </Flex>
             <Flex justify="center" maxw="100%" height="100%" items="flex-end">
-              <ImgHero src={man} />
+              <ImgHero src={man} alt="Homem segurando um tablet" />
             </Flex>
           </DivContent>
         </ContentSection>

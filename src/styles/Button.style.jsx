@@ -1,17 +1,29 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
+
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  background-color: var(--brand-colors-teal-pure);
+  border-radius: 80px;
+  color: black;
+  font-size: 1.6rem;
+  font-weight: 600;
+  transition: 0.2s;
+  cursor: pointer;
+  padding: 18px 32px;
+
+  &:nth-child(2) {
+    background-color: none;
     background: none;
-    background-color: ${(prop) => prop.backgroundcolor ? prop.backgroundcolor : "none"};
-    border: ${(prop) => prop.border ? prop.border : "none"};
-    font-weight: 600;
-    color: ${(prop) => prop.color ? prop.color : "white"};
-    font-size: ${(prop) => prop.fontsize ? prop.fontsize : "1.5rem"};
-    border-radius: ${(prop) => prop.borderradius ? prop.borderradius : "none"};
-    padding: ${(prop) => prop.padding ? prop.padding : "0"};
-    cursor: pointer;
-    margin: ${(prop) => prop.margin ? prop.margin : "0"};
-    display: flex;
-    align-items: center;
-    white-space: ${(prop) => prop.whitespace ? prop.whitespace : "break"};
-`
+    color: #FFF;
+    gap: 8px;
+    }
+
+  &:hover {
+    padding: 18px 32px;
+    font-size: 1.8rem;
+  }
+`;

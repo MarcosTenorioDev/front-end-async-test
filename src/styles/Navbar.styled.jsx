@@ -12,7 +12,7 @@ const NavBg = styled.div`
   padding: 20px 0px;
   z-index: 2;
 
-  @media (max-width: 1220px) {
+  @media (max-width: 1290px) {
     background: none;
     padding: 0;
   }
@@ -24,7 +24,7 @@ const NavBarContent = styled.div`
   max-width: 1440px;
   padding: 0px 112px;
 
-  @media (max-width: 1220px) {
+  @media (max-width: 1290px) {
     padding: 0;
   }
 `;
@@ -34,7 +34,7 @@ const NavbarWrapper = styled.nav`
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: 1220px) {
+  @media (max-width: 1290px) {
     padding: 20px 0px;
     flex-direction: column-reverse;
     background: var(--teal-purple-gradient);
@@ -49,18 +49,19 @@ const NavButtonWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 80%;
-  justify-content: space-between;
+  width: 100%;
+  max-width: 356px;
 
-  @media (max-width: 1220px) {
+  @media (max-width: 1290px) {
     & > *:nth-child(2) {
       display: none;
     }
-    padding: 5px 3rem;
+    max-width: 80%;
   }
 
   @media (max-width: 660px) {
-    padding: 5px 5rem 5px 3rem;
+    width: 80%;
+    padding: 0px 3rem 0px 0px;
   }
 
   @media (max-width: 450px) {
@@ -70,17 +71,21 @@ const NavButtonWrapper = styled.div`
 
 const NavLinkWrapper = styled.nav`
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 40px;
-  padding-left: 10%;
+  padding-left: 20px;
+  margin-right: 48px;
+  flex: 1;
+  border-right: 1px solid rgba(var(--brand-color), 0.25);
 
-  @media (max-width: 1220px) {
+  @media (max-width: 1290px) {
     flex-direction: column;
     justify-content: flex-start;
     flex: 1;
     padding: 7rem 1rem 0px;
     width: 80%;
     gap: 0;
+    border: none;
     ${(props) =>
       props.isMobileMenuOpen &&
       css`
@@ -88,12 +93,8 @@ const NavLinkWrapper = styled.nav`
       `}
   }
   @media (max-width: 670px) {
-    margin-bottom:200px;
+    margin-bottom: 200px;
     height: 100vh;
-  }
-  @media (max-width: 440px) {
-    width: 95%;
-    
   }
 `;
 
@@ -107,15 +108,13 @@ const StyledNavLink = styled(NavLink)`
   font-size: 1.5rem;
   display: flex;
   align-items: center;
-  font-weight: 500;
+  font-weight: 400;
 
-  &:nth-child(4) {
-    border-right: 1px solid rgba(var(--brand-color), 0.25);
+  &:nth-child(5) {
     padding-right: 48px;
-    margin-right: 48px;
   }
 
-  @media (max-width: 1220px) {
+  @media (max-width: 1290px) {
     &:nth-child(4) {
       border-right: none;
       padding-right: 0;
@@ -123,6 +122,28 @@ const StyledNavLink = styled(NavLink)`
     }
     border-top: 1px solid rgb(90, 147, 224);
     padding: 20px 0;
+  }
+
+  &:hover {
+    transform: translateY(4px);
+  }
+`;
+
+const StyledNavButton = styled.button`
+  color: #FFF;
+  transition: 0.2s;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  background: none;
+  border-radius: 80px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 12px 24px;
+  cursor: pointer;
+
+  &:hover {
+    font-size: 1.7rem;
   }
 `;
 
@@ -132,7 +153,7 @@ const StyledHamburguerIcon = styled.i`
   right: 25px;
   top: 28px;
   z-index: 9999999;
-  @media (max-width: 1220px) {
+  @media (max-width: 1290px) {
     display: block;
   }
 `;
@@ -140,7 +161,7 @@ const StyledHamburguerIcon = styled.i`
 const LogoImg = styled.img`
   width: 150px;
 
-  @media (max-width: 1220px) {
+  @media (max-width: 1290px) {
     position: absolute;
     left: 34px;
     top: 34px;
@@ -158,4 +179,5 @@ export {
   StyledHamburguerIcon,
   NavBarContent,
   NavButtonWrapper,
+  StyledNavButton,
 };
