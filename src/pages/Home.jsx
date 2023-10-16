@@ -30,6 +30,9 @@ import playlist from "../assets/playlist.svg";
 import certified from "../assets/certified.svg";
 import man from "../assets/man.png";
 import { useDataContext } from "../context/contextLanguageProvider";
+import folder from "../assets/folder.svg"
+import track from "../assets/track.svg"
+import playlistCard from "../assets/playlists.svg"
 
 const Home = () => {
   const { data } = useDataContext();
