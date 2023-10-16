@@ -2,7 +2,7 @@
 {
   "items": [
     {
-      "img": "../../src/assets/track.svg",
+      "img": "https://front-end-async-test.vercel.app/assets/track-83b3f9c9.svg",
       "id": 1,
       "title": {
         "pt": "Trilhas",
@@ -17,7 +17,7 @@
       }
     },
     {
-      "img": "../../src/assets/playlists.svg",
+      "img": "https://front-end-async-test.vercel.app/assets/playlists-5c352d15.svg",
       "id": 2,
       "title": {
         "pt": "Playlists",
@@ -31,7 +31,7 @@
       }
     },
     {
-      "img": "../../src/assets/folder.svg",
+      "img": "https://front-end-async-test.vercel.app/assets/folder-ea118acf.svg",
       "id": 3,
       "title": {
         "pt": "Coleções",
