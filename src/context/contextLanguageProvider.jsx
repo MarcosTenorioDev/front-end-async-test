@@ -16,10 +16,9 @@ export const LanguageProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:3000/items")
+    fetch("https://json-db-theta.vercel.app/items")
       .then((response) => response.json())
       .then((jsonData) => {
-        /*  console.log(jsonData);  */
         const filteredData = jsonData.map((item) => {
           return {
             img: item.img,
