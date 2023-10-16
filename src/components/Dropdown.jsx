@@ -31,7 +31,7 @@ const Dropdown = (props) => {
     <DropdownWrapper>
       <DropdownButton onClick={toggleDropdown}>
         {props.name ? props.name : selectedOption}
-        <ArrowDropdown isOpen={isOpen}/>
+        <ArrowDropdown isOpen={isOpen} />
       </DropdownButton>
       {isOpen && (
         <DropdownMenu position={props.position}>
@@ -43,7 +43,10 @@ const Dropdown = (props) => {
               <DropdownItem
                 selected={props.check ? selectedOption === option.name : ""}
                 key={index}
-                onClick={() => selectOption(option.name)}
+                onClick={() => {
+                  selectOption(option.name);
+                  props.onItemClick(option.name);
+                }}
                 paddingitem={props.paddingitem}
               >
                 <DropdownImage
@@ -52,8 +55,14 @@ const Dropdown = (props) => {
                   widthimg={props.widthimg}
                 />
                 <div>
-                  <DropdownItemTitle>{option.name}</DropdownItemTitle>
-                  {option.description && <DropdownItemDescription>{option.description}</DropdownItemDescription>}
+                  <DropdownItemTitle>
+                    {option.name}
+                  </DropdownItemTitle>
+                  {option.description && (
+                    <DropdownItemDescription>
+                      {option.description}
+                    </DropdownItemDescription>
+                  )}
                 </div>
                 {selectedOption === option.name && (
                   <>{props.check && <CheckIcon src={check} alt="Check" />}</>

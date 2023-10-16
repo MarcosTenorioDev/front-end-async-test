@@ -1,4 +1,4 @@
-import { Navbar } from "../components";
+import { Navbar, Card } from "../components";
 import {
   HeroSectionBg,
   ContentSection,
@@ -29,32 +29,19 @@ import play from "../assets/play.svg";
 import playlist from "../assets/playlist.svg";
 import certified from "../assets/certified.svg";
 import man from "../assets/man.png";
-import Card from "../components/Card";
-import track from "../assets/track.svg"
-import playlistCard from "../assets/playlists.svg"
-import folder from "../assets/folder.svg"
+import { useDataContext } from "../context/contextLanguageProvider";
 
 const Home = () => {
-  const cards = [
-    {
-      img: track,
-      title: "Trilha de etapas",
-      description:
-        "Crie planos de estudos especificando aulas e/ou cursos e definindo a ordem que seus alunos devem estudar.",
-    },
-    {
-      img: playlistCard,
-      title: "Playlists",
-      description:
-        "Transforme uma coleção em uma playlist para poder ver vídeos e áudios em sequência offline.",
-    },
-    {
-      img: folder,
-      title: "Coleções",
-      description:
-        "Crie coleções, adicione conteúdos, reorganize ítens e deixe tudo do seu jeito para melhorar a experiência.",
-    },
-  ];
+  const { data } = useDataContext();
+
+  const cards = data.map((item) => {
+    return {
+      img: item.img,
+      id: item.id,
+      title: item.title,
+      description: item.description,
+    };
+  });
   return (
     <>
       <Navbar />

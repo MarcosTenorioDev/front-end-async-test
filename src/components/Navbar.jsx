@@ -8,7 +8,7 @@ import {
   StyledHamburguerIcon,
   NavBarContent,
   NavButtonWrapper,
-  StyledNavButton
+  StyledNavButton,
 } from "../styles/Navbar.styled";
 import Dropdown from "./Dropdown";
 import logoSvg from "../assets/logo.svg";
@@ -22,6 +22,7 @@ import gamification from "../assets/gamification.svg";
 import mobile from "../assets/mobile.svg";
 import social from "../assets/social.svg";
 import { useState } from "react";
+import { useDataContext } from "../context/contextLanguageProvider";
 
 const Navbar = () => {
   const link = [
@@ -44,10 +45,11 @@ const Navbar = () => {
   ];
 
   const optionsLanguage = [
-    { name: "PT", img: brazil },
-    { name: "EN", img: usa },
-    { name: "ES", img: spain },
+    { name: "pt", img: brazil },
+    { name: "en", img: usa },
+    { name: "es", img: spain },
   ];
+  const { selectedLanguage, changeLanguage } = useDataContext();
 
   const solutions = [
     {
@@ -111,7 +113,12 @@ const Navbar = () => {
               </StyledNavLink>
               <StyledNavButton>Começar agora</StyledNavButton>
 
-              <Dropdown options={optionsLanguage} text="PT" check={true} />
+              <Dropdown
+                options={optionsLanguage}
+                name={selectedLanguage}
+                check={true}
+                onItemClick={changeLanguage}
+              />
             </NavButtonWrapper>
           </NavbarWrapper>
 

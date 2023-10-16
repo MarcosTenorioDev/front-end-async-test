@@ -1,3 +1,4 @@
 import Navbar from "./components/Navbar";
+import Card from "./components/Card";
 
-export {Navbar} 
+export {Navbar, Card} 
