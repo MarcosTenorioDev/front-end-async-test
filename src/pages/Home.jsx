@@ -37,34 +37,21 @@ import playlistCard from "../assets/playlists.svg";
 const Home = () => {
   const { data } = useDataContext();
 
-  const homeTitle = data.content?.home?.title ? data.content.home.title : "";
-  const homeSubTitle = data.content?.home?.subtitle
-    ? data.content.home.subtitle
-    : "";
-  const homeSlogan = data.content?.home?.slogan ? data.content.home.slogan : "";
-  const homeBtnStart = data?.content?.home?.startNow
-    ? data.content.home.startNow
-    : "";
-  const homeBtnWatchVideo = data?.content?.home?.watchVideo
-    ? data.content.home.watchVideo
-    : "";
-  const mainContentSub = data?.content?.home?.mainContentSub
-    ? data.content.home.mainContentSub
-    : "";
-  const moreResources = data?.content?.home?.MoreResources
-    ? data.content.home.MoreResources
-    : "";
-  const mainContentTitle = data?.content?.home?.MainContentTitle
-    ? data.content.home.MainContentTitle
-    : "";
-  const seeAllResourcesText = data?.content?.home?.SeeAllResourcesText
-    ? data.content.home.SeeAllResourcesText
-    : "";
-  const seeMoreBtn = data?.content?.home?.SeeMoreBtn
-    ? data.content.home.SeeMoreBtn
-    : "";
+  const homeContent = data.content?.home ?? {};
 
-  const cards = data.items ? data.items : [];
+  const homeTitle = homeContent.title ?? "";
+  const homeSubTitle = homeContent.subtitle ?? "";
+  const homeSlogan = homeContent.slogan ?? "";
+  const homeBtnStart = homeContent.startNow ?? "";
+  const homeBtnWatchVideo = homeContent.watchVideo ?? "";
+  const mainContentSub = homeContent.mainContentSub ?? "";
+  const moreResources = homeContent.MoreResources ?? "";
+  const mainContentTitle = homeContent.MainContentTitle ?? "";
+  const seeAllResourcesText = homeContent.SeeAllResourcesText ?? "";
+  const seeMoreBtn = homeContent.SeeMoreBtn ?? "";
+  
+  const cards = data.items ?? [];
+  
 
   return (
     <>
