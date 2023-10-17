@@ -69,6 +69,8 @@ const MainContentSub = styled.h3`
 
   @media (max-width: 480px) {
     font-size: 1.4rem;
+    white-space: normal;
+    text-align: center;
 
     &::before {
       display: none;
@@ -85,6 +87,7 @@ const MoreResources = styled.h4`
   margin-bottom: 10px;
 
   @media (max-width: 480px) {
+    white-space: nowrap;
     font-size: 1.4rem;
   }
 `;
