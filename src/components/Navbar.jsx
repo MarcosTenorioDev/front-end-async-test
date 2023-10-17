@@ -17,10 +17,6 @@ import userIcon from "../assets/userProfile.svg";
 import brazil from "../assets/brazil.svg";
 import usa from "../assets/usa.svg";
 import spain from "../assets/spain.svg";
-import ead from "../assets/ead.svg";
-import gamification from "../assets/gamification.svg";
-import mobile from "../assets/mobile.svg";
-import social from "../assets/social.svg";
 import { useState } from "react";
 import { useDataContext } from "../context/contextLanguageProvider";
 
