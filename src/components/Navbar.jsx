@@ -25,24 +25,15 @@ import { useState } from "react";
 import { useDataContext } from "../context/contextLanguageProvider";
 
 const Navbar = () => {
-  const link = [
-    {
-      page: "Preços",
-      href: "/",
-    },
-    {
-      page: "Academy",
-      href: "/",
-    },
-    {
-      page: "Blog",
-      href: "/",
-    },
-    {
-      page: "Contato",
-      href: "/",
-    },
-  ];
+  const {data} = useDataContext();
+  const links = data.navbar ? data.navbar : []
+
+  console.log(data.navButtons)
+  const signIn = data?.navButtons?.signIn ? data.navButtons.signIn : "";
+  const solutionsText = data?.navButtons?.solutions ? data.navButtons.solutions : "";
+  const start = data?.navButtons?.start ? data.navButtons.start : "";
+
+
 
   const optionsLanguage = [
     { name: "pt", img: brazil },
@@ -94,12 +85,12 @@ const Navbar = () => {
                 padding="30px 30px"
                 paddingitem="0px 25px 40px"
                 widthimg="35px"
-                name="Soluções"
+                name={solutionsText}
                 check={false}
                 display="grid"
                 position="relative"
               />
-              {link.map((link) => (
+              {links.map((link) => (
                 <StyledNavLink key={link.page} to={link.href}>
                   {link.page}
                 </StyledNavLink>
@@ -109,9 +100,9 @@ const Navbar = () => {
             <NavButtonWrapper>
               <StyledNavLink>
                 <StyledUserIcon src={userIcon} alt="User Icon" />
-                Entrar
+                {signIn}
               </StyledNavLink>
-              <StyledNavButton>Começar agora</StyledNavButton>
+              <StyledNavButton>{start}</StyledNavButton>
 
               <Dropdown
                 options={optionsLanguage}

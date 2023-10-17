@@ -30,21 +30,42 @@ import playlist from "../assets/playlist.svg";
 import certified from "../assets/certified.svg";
 import man from "../assets/man.png";
 import { useDataContext } from "../context/contextLanguageProvider";
-import folder from "../assets/folder.svg"
-import track from "../assets/track.svg"
-import playlistCard from "../assets/playlists.svg"
+import folder from "../assets/folder.svg";
+import track from "../assets/track.svg";
+import playlistCard from "../assets/playlists.svg";
 
 const Home = () => {
   const { data } = useDataContext();
 
-  const cards = data.map((item) => {
-    return {
-      img: item.img,
-      id: item.id,
-      title: item.title,
-      description: item.description,
-    };
-  });
+  const homeTitle = data.content?.home?.title ? data.content.home.title : "";
+  const homeSubTitle = data.content?.home?.subtitle
+    ? data.content.home.subtitle
+    : "";
+  const homeSlogan = data.content?.home?.slogan ? data.content.home.slogan : "";
+  const homeBtnStart = data?.content?.home?.startNow
+    ? data.content.home.startNow
+    : "";
+  const homeBtnWatchVideo = data?.content?.home?.watchVideo
+    ? data.content.home.watchVideo
+    : "";
+  const mainContentSub = data?.content?.home?.mainContentSub
+    ? data.content.home.mainContentSub
+    : "";
+  const moreResources = data?.content?.home?.MoreResources
+    ? data.content.home.MoreResources
+    : "";
+  const mainContentTitle = data?.content?.home?.MainContentTitle
+    ? data.content.home.MainContentTitle
+    : "";
+  const seeAllResourcesText = data?.content?.home?.SeeAllResourcesText
+    ? data.content.home.SeeAllResourcesText
+    : "";
+  const seeMoreBtn = data?.content?.home?.SeeMoreBtn
+    ? data.content.home.SeeMoreBtn
+    : "";
+
+  const cards = data.items ? data.items : [];
+
   return (
     <>
       <Navbar />
@@ -89,21 +110,17 @@ const Home = () => {
                 <ImgSubtitle>
                   <img src={devices} alt="Computers Icons" />
                 </ImgSubtitle>
-                PLATAFORMA ALL IN ONE
+                {homeSlogan}
               </Slogan>
-              <Title>Sua escola online poderosa e lucrativa</Title>
-              <Subtitle>
-                Tenha sua própria escola online 100% white label com rede
-                social, gamificação, clube de assinaturas, ecommerce e sistema
-                EAD completo.
-              </Subtitle>
+              <Title>{homeTitle}</Title>
+              <Subtitle>{homeSubTitle}</Subtitle>
               <Flex gap="30px" items="center">
-                <Button>Começar Agora</Button>
+                <Button>{homeBtnStart}</Button>
                 <Button>
                   <ImgBtn>
                     <img src={play} alt="play icon" />
                   </ImgBtn>
-                  Ver Vídeo
+                  {homeBtnWatchVideo}
                 </Button>
               </Flex>
             </Flex>
@@ -116,13 +133,11 @@ const Home = () => {
 
       <MainContent>
         <AboutContent>
-          <MainContentSub>pensamos em cada detalhe</MainContentSub>
-          <MoreResources>Conheça alguns dos nossos recursos ⚡️</MoreResources>
+          <MainContentSub>{mainContentSub}</MainContentSub>
+          <MoreResources>{moreResources}</MoreResources>
         </AboutContent>
 
-        <MainContentTitle>
-          Queremos que o aluno se sinta confortável enquanto aprende
-        </MainContentTitle>
+        <MainContentTitle>{mainContentTitle}</MainContentTitle>
 
         <CardsContainer>
           {cards.map((card, index) => (
@@ -136,10 +151,8 @@ const Home = () => {
         </CardsContainer>
 
         <SeeAllResourcesDiv>
-          <SeeAllResourcesText>
-            Veja todos os outros recursos disponíveis para te ajudar
-          </SeeAllResourcesText>
-          <SeeMoreBtn>Ver mais</SeeMoreBtn>
+          <SeeAllResourcesText>{seeAllResourcesText}</SeeAllResourcesText>
+          <SeeMoreBtn>{seeMoreBtn}</SeeMoreBtn>
         </SeeAllResourcesDiv>
       </MainContent>
     </>
