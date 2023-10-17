@@ -30,6 +30,7 @@ const Navbar = () => {
 
   const { signIn, solutions, start } = data.navButtons ?? {};
 
+  const solutionTitle = data?.solutionTitle ?? "";
   const signInText = signIn ?? "";
   const solutionsText = solutions ?? "";
   const startText = start ?? "";
@@ -41,28 +42,12 @@ const Navbar = () => {
   ];
   const { selectedLanguage, changeLanguage } = useDataContext();
 
-  const solutionsItems = [
-    {
-      name: "Crie uma Escola Online",
-      description: "Lorem ipsum dolor sit amet",
-      img: ead,
-    },
-    {
-      name: "Comunidade e rede social",
-      description: "Lorem ipsum dolor sit amet",
-      img: social,
-    },
-    {
-      name: "Gamificação",
-      description: "Lorem ipsum dolor sit amet",
-      img: gamification,
-    },
-    {
-      name: "Aplicativo mobile",
-      description: "Lorem ipsum dolor sit amet",
-      img: mobile,
-    },
-  ];
+  let solutionsItems = data?.solutionsItems ? data?.solutionsItems : [];
+  solutionsItems = solutionsItems.map((item) => ({
+    name: item.name,
+    description: item.description,
+    img: item.img,
+  }));
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -80,7 +65,7 @@ const Navbar = () => {
             <NavLinkWrapper>
               <Dropdown
                 options={solutionsItems}
-                title="SOLUÇÕES PRINCIPAIS"
+                title={solutionTitle}
                 padding="30px 30px"
                 paddingitem="0px 25px 40px"
                 widthimg="35px"

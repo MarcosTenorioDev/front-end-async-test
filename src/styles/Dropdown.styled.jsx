@@ -92,6 +92,7 @@ const DropdownItemDescription = styled.p`
   font-size: 1.3rem;
   font-weight: 400;
   color: var(--neutral-colors-200);
+  white-space: nowrap;
 `;
 
 export {

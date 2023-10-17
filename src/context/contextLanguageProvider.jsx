@@ -18,46 +18,61 @@ export const LanguageProvider = ({ children }) => {
     fetch("https://json-db-theta.vercel.app/data")
       .then((response) => response.json())
       .then((data) => {
-        
-         const filteredCards = data.items.map((item) => ({
+        const filteredCards = data.items.map((item) => ({
           img: item.img,
           id: item.id,
           title: item.title[selectedLanguage],
           description: item.description[selectedLanguage],
         }));
-   
+
         const filteredHomeContent = {
           title: data.content.home.title[selectedLanguage],
           subtitle: data.content.home.subtitle[selectedLanguage],
           slogan: data.content.home.slogan[selectedLanguage],
           startNow: data.content.home.buttons.startNow[selectedLanguage],
           watchVideo: data.content.home.buttons.watchVideo[selectedLanguage],
-          mainContentSub: data.content.home.mainContent.mainContentSub[selectedLanguage],
-          MoreResources: data.content.home.mainContent.MoreResources[selectedLanguage],
-          MainContentTitle: data.content.home.mainContent.MainContentTitle[selectedLanguage],
-          SeeAllResourcesText: data.content.home.mainContent.SeeAllResourcesText[selectedLanguage],
-          SeeMoreBtn: data.content.home.mainContent.SeeMoreBtn[selectedLanguage],
+          mainContentSub:
+            data.content.home.mainContent.mainContentSub[selectedLanguage],
+          MoreResources:
+            data.content.home.mainContent.MoreResources[selectedLanguage],
+          MainContentTitle:
+            data.content.home.mainContent.MainContentTitle[selectedLanguage],
+          SeeAllResourcesText:
+            data.content.home.mainContent.SeeAllResourcesText[selectedLanguage],
+          SeeMoreBtn:
+            data.content.home.mainContent.SeeMoreBtn[selectedLanguage],
         };
-        
-         const filteredNavbarLinks = data.navbarLinks.map((link) => ({
-          page: link.page[selectedLanguage],
-          href: link.href
-         }))
 
-         const filteredNavbarButtons = {
+        const filteredNavbarLinks = data.navbarLinks.map((link) => ({
+          page: link.page[selectedLanguage],
+          href: link.href,
+        }));
+
+        const filteredNavbarButtons = {
           solutions: data.navbarButtons[0].solutions[selectedLanguage],
           signIn: data.navbarButtons[1].signIn[selectedLanguage],
           start: data.navbarButtons[2].start[selectedLanguage],
         };
 
-  
-        setData({ items: filteredCards, content: { home: filteredHomeContent }, navbar: filteredNavbarLinks, navButtons: filteredNavbarButtons  }); 
+        const filteredSolutionsItems = data.solutionsItems.map((item) => ({
+          name: item.name[selectedLanguage],
+          description: item.description[selectedLanguage],
+          img: item.img,
+        }));
 
+        const filteredSolutionsTitle = data.solutionTitle[selectedLanguage];
+        
+        setData({
+          items: filteredCards,
+          content: { home: filteredHomeContent },
+          navbar: filteredNavbarLinks,
+          navButtons: filteredNavbarButtons,
+          solutionsItems: filteredSolutionsItems,
+          solutionTitle: filteredSolutionsTitle,
+        });
       })
       .catch((error) => console.error("Error fetching data:", error));
   }, [selectedLanguage]);
-  
-  
 
   return (
     <DataContext.Provider value={{ data, selectedLanguage, changeLanguage }}>
