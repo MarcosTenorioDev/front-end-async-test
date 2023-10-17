@@ -25,15 +25,14 @@ import { useState } from "react";
 import { useDataContext } from "../context/contextLanguageProvider";
 
 const Navbar = () => {
-  const {data} = useDataContext();
-  const links = data.navbar ? data.navbar : []
+  const { data } = useDataContext();
+  const links = data.navbar ? data.navbar : [];
 
-  console.log(data.navButtons)
-  const signIn = data?.navButtons?.signIn ? data.navButtons.signIn : "";
-  const solutionsText = data?.navButtons?.solutions ? data.navButtons.solutions : "";
-  const start = data?.navButtons?.start ? data.navButtons.start : "";
+  const { signIn, solutions, start } = data.navButtons ?? {};
 
-
+  const signInText = signIn ?? "";
+  const solutionsText = solutions ?? "";
+  const startText = start ?? "";
 
   const optionsLanguage = [
     { name: "pt", img: brazil },
@@ -42,7 +41,7 @@ const Navbar = () => {
   ];
   const { selectedLanguage, changeLanguage } = useDataContext();
 
-  const solutions = [
+  const solutionsItems = [
     {
       name: "Crie uma Escola Online",
       description: "Lorem ipsum dolor sit amet",
@@ -68,8 +67,8 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
-    console.log(isMobileMenuOpen);
     setIsMobileMenuOpen(!isMobileMenuOpen);
+    document.body.style.overflow = isMobileMenuOpen ? "auto" : "hidden";
   };
 
   return (
@@ -80,7 +79,7 @@ const Navbar = () => {
           <NavbarWrapper open={isMobileMenuOpen}>
             <NavLinkWrapper>
               <Dropdown
-                options={solutions}
+                options={solutionsItems}
                 title="SOLUÇÕES PRINCIPAIS"
                 padding="30px 30px"
                 paddingitem="0px 25px 40px"
@@ -100,9 +99,9 @@ const Navbar = () => {
             <NavButtonWrapper>
               <StyledNavLink>
                 <StyledUserIcon src={userIcon} alt="User Icon" />
-                {signIn}
+                {signInText}
               </StyledNavLink>
-              <StyledNavButton>{start}</StyledNavButton>
+              <StyledNavButton>{startText}</StyledNavButton>
 
               <Dropdown
                 options={optionsLanguage}
