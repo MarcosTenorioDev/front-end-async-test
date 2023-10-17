@@ -16,7 +16,7 @@ import ArrowDropdown from "./ArrowDropdown";
 
 const Dropdown = (props) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(props.text);
+  const [selectedOption, setSelectedOption] = useState("pt");
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
